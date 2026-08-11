@@ -1,18 +1,19 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
-import { appEnvironmentSchema } from "./schemas/app.schema";
 import { appConfig } from "./registers/app.register";
+import { ValidationSchema } from "./schemas";
+import { databaseConfig } from "./registers/database.register";
 
 
 @Module({
     imports: [
         ConfigModule.forRoot({
             isGlobal: true,
-            validationSchema: appEnvironmentSchema,
+            validationSchema: ValidationSchema,
             validationOptions: {
                 abortEarly: false,
             },
-            load: [appConfig]
+            load: [appConfig,databaseConfig],
         })
     ],
     exports: []
