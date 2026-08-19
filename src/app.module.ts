@@ -6,11 +6,8 @@ import { DatabaseModule } from './infrastructure/database/typeorm.module';
 import { databaseConfiguration } from './infrastructure/database/typeorm-configuration.database';
 
 @Module({
-  imports: [
-    EnvironmentModule,
-    DatabaseModule.forRoot(databaseConfiguration()),
-  ],
+  imports: [EnvironmentModule, DatabaseModule.forRoot(databaseConfiguration())],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {} 
+export class AppModule {}
