@@ -1,6 +1,6 @@
-import {registerAs} from '@nestjs/config';
+import { registerAs } from '@nestjs/config';
 
 export const appConfig = registerAs('app', () => ({
-    port:Number(process.env.PORT) || 3000,
-    nodeEnv: process.env.NODE_ENV || 'dev',
-}))
+  port: Number(process.env.PORT) || 3000,
+  nodeEnv: process.env.NODE_ENV || 'dev',
+}));

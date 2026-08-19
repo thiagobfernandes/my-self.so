@@ -1,4 +1,4 @@
-import Joi from "joi";
+import Joi from 'joi';
 
 export const databaseEnvironmentSchema = Joi.object({
   DB_HOST: Joi.string().required().messages({
